@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ввод данных</title>
+    <link rel="stylesheet" href="styles-first-page.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Введите данные для билета</h1>
+
+        <label for="transport">Тип транспорта:</label>
+        <select id="transport">
+            <option value="Автобус">Автобус</option>
+            <option value="Троллейбус">Троллейбус</option>
+        </select>
+
+        <label for="route">Номер маршрута:</label>
+        <select id="route">
+            <!-- Динамически изменяемые маршруты -->
+        </select>
+
+        <label for="vehicleNumber">Номер Т/С:</label>
+        <input type="text" id="vehicleNumber" placeholder="Введите номер Т/С">
+
+        <button id="save">Сохранить</button>
+
+        <footer>TG:@sbp_free_ticket_bot</footer>
+    </div>
+
+    
+
+    <script>
+        // Обработчик изменения типа транспорта
+        document.getElementById("transport").addEventListener("change", function() {
+            const transport = this.value;
+            const routeSelect = document.getElementById("route");
+
+            // Очищаем текущие опции маршрутов
+            routeSelect.innerHTML = "";
+
+            let routes = [];
+            if (transport === "Автобус") {
+                routes = ['1', '10А', '5', '11', '18', '33Р'];
+            } else if (transport === "Троллейбус") {
+                routes = ['3', '4', '6', '10'];
+            }
+
+            // Добавляем новые опции маршрутов
+            routes.forEach(route => {
+                const option = document.createElement("option");
+                option.value = route;
+                option.textContent = route;
+                routeSelect.appendChild(option);
+            });
+        });
+
+        // Инициализация списка маршрутов на основе начального значения
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("transport").dispatchEvent(new Event("change"));
+        });
+
+        // Обработчик нажатия на кнопку "Сохранить"
+        document.getElementById("save").addEventListener("click", function() {
+            const transport = document.getElementById("transport").value;
+            const route = document.getElementById("route").value;
+            const vehicleNumber = document.getElementById("vehicleNumber").value;
+
+            // Проверяем, чтобы поле "Номер Т/С" не было пустым
+            if (!vehicleNumber.trim()) {
+                alert("Пожалуйста, введите номер Т/С.");
+                return;
+            }
+
+            const startTime = new Date().toISOString();  // Записываем время, когда пользователь сохранил данные
+
+            // Сохраняем данные в localStorage
+            localStorage.setItem("transport", transport);
+            localStorage.setItem("route", route);
+            localStorage.setItem("vehicleNumber", vehicleNumber);
+            localStorage.setItem("startTime", startTime);
+
+            // Перенаправляем на страницу с билетом
+            window.location.href = "newTicketPage.html";
+        });
+    </script>
+</body>
+</html>
