@@ -52,7 +52,7 @@
             document.getElementById("date").textContent = new Date().toLocaleString();
 
             // Генерация QR-кода с данными пользователя
-            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=Тип%20транспорта%3A%20${transport}%2C%20Номер%20маршрута%3A%20${route}%2C%20Номер%20Т%2FС%3A%20${vehicleNumber}%2C%20Дата%3A%20${new Date().toLocaleString()}`;
+            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=Тип%20транспорта%3A%20${transport}%2C%20Номер%20маршрута%3A%20${route}%2C%20Номер%20Т%2FС%3A%20${vehicleNumber}%2C%20Дата%3A%20${new Date().toLocaleString()}&format=png&transparent=true`;
             document.getElementById("qr-code").src = qrCodeUrl;
 
             // Функция для обновления таймера

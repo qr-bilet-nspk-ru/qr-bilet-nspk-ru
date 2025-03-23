@@ -71,22 +71,25 @@ body {
 .date {
     font-size: 18px;
     color: #2e1f4c;
-    line-height: 1.2;
+    line-height: 1.5;
     margin-bottom: 1px;
 }
 
 .time-passed {
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 3px;
+    font-size: 18px; /* Размер шрифта надписи */
+    color: #2e1f4c;
+    line-height: 1.2; /* Интервал между строками */
+    text-align: center; /* Выравнивание по центру */
+    margin-bottom: 1.5px; /* Минимальный отступ снизу */
 }
 
 .timer {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 32px; /* Размер шрифта таймера */
     color: #2e1f4c;
-    margin-bottom: 20px;
-    line-height: 0.1;
+    font-weight: bold; /* Жирный шрифт */
+    text-align: center; /* Выравнивание по центру */
+    margin-top: 0; /* Убираем верхний отступ */
+    margin-bottom: 0.5px
 }
 
 .qr {
