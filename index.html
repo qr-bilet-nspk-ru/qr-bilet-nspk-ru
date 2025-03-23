@@ -12,25 +12,37 @@
             <h1>Введите код доступа</h1>
             <input type="text" id="accessCode" placeholder="Введите код" class="input-field">
             <button id="submitCode" class="submit-btn">Подтвердить</button>
-            <p id="error-message" class="error-message">Неверный код. Попробуйте снова.</p>
+            <p id="error-message" class="error-message">Неверный код или он уже использован.</p>
         </div>
     </div>
 
     <script>
         // Массив с кодами доступа
         const validCodes = [
-            "nLEVCUj","gUNKiT8","mAq30Of","RgHESle","ZBkXUNX","79up6y6","qZi2Q8d","sBytpMW","B3uyL9g","xdFmOV0","tmd97jV","jXglW4I","8IXfkWJ","FcDhTmD","H5zC7sL","x07ID1y","qHQLa1n","dVUEWKM","7cirZTo","juSJYr4","YDMPNwN","QrLvOc9","3YcCXbS","4rJbppu","AvTaXfV","YqE2pNQ","zdCwlym","XO4W4Bs","az2KF0i","qXfHTOa","Er2lRjx","stla8vy","6esI3r9","teU5Y5E","exESJco","Qh8ryYk","Boz3F9g","DF3vat5","nZhtaOZ","BrhosHf","9Tku01m","BCsNerW","1PGphsL","XtIs3n4","1FQAWQg","Sdqzlkt","Sda32fn","VeUi9zp","qalrLam","FWNeVwm"
+            "nLEVCUj","gUNKiT8","mAq30Of","RgHESle","ZBkXUNX","79up6y6","qZi2Q8d","sBytpMW","B3uyL9g","xdFmOV0","tmd97jV",
+            "jXglW4I","8IXfkWJ","FcDhTmD","H5zC7sL","x07ID1y","qHQLa1n","dVUEWKM","7cirZTo","juSJYr4","YDMPNwN","QrLvOc9",
+            "3YcCXbS","4rJbppu","AvTaXfV","YqE2pNQ","zdCwlym","XO4W4Bs","az2KF0i","qXfHTOa","Er2lRjx","stla8vy","6esI3r9",
+            "teU5Y5E","exESJco","Qh8ryYk","Boz3F9g","DF3vat5","nZhtaOZ","BrhosHf","9Tku01m","BCsNerW","1PGphsL","XtIs3n4",
+            "1FQAWQg","Sdqzlkt","Sda32fn","VeUi9zp","qalrLam","FWNeVwm"
         ];
 
+        // Загружаем использованные коды из localStorage
+        let usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
         document.getElementById("submitCode").addEventListener("click", function() {
-            const enteredCode = document.getElementById("accessCode").value;
+            const enteredCode = document.getElementById("accessCode").value.trim();
             const errorMessage = document.getElementById("error-message");
 
-            if (validCodes.includes(enteredCode)) {
-                // Если код правильный, перенаправляем пользователя на сайт
-                window.location.href = "main.html"; // Замените на адрес вашего сайта
+            // Проверяем, есть ли код в массиве и не использован ли он
+            if (validCodes.includes(enteredCode) && !usedCodes.includes(enteredCode)) {
+                // Добавляем код в список использованных
+                usedCodes.push(enteredCode);
+                localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+
+                // Перенаправляем пользователя
+                window.location.href = "main.html"; // Замените на ваш URL
             } else {
-                // Если код неправильный, показываем ошибку
+                // Показываем ошибку
                 errorMessage.style.display = "block";
             }
         });

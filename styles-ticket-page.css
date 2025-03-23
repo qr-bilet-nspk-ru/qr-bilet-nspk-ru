@@ -19,9 +19,8 @@ body {
 
 .ticket {
     width: 350px;
-    background-color: #f5ede2;
+    background-color: #f5f1e8;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
 }
@@ -51,14 +50,14 @@ body {
 .transport {
     font-size: 20px;
     margin-top: 10px;
-    line-height: 2.2;
+    line-height: 1;
 }
 
 .vehicleNumber {
     font-size: 16px;
-    color: #808080;
+    color: rgba(0, 0, 0, 0.5); 
     margin-top: 0.01px;
-    line-height: 0.1;
+    line-height: 1;
 }
 
 .price {
@@ -66,13 +65,13 @@ body {
     font-weight: bold;
     color: #2e1f4c;
     margin: 10px 0;
-    line-height: 0.2;
+    line-height: 1;
 }
 
 .date {
     font-size: 18px;
     color: #2e1f4c;
-    line-height: 4.2;
+    line-height: 1.2;
     margin-bottom: 1px;
 }
 
@@ -87,7 +86,7 @@ body {
     font-weight: bold;
     color: #2e1f4c;
     margin-bottom: 20px;
-    line-height: 0.2;
+    line-height: 0.1;
 }
 
 .qr {
