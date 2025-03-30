@@ -15,23 +15,22 @@
     
 html, body {
     width: 100%;
-    height: 100%;
+    min-height: 100vh; /* Минимальная высота на всю высоту экрана */
     font-family: 'Circe', sans-serif;
+    background-color: #f5f1e8;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #f5f1e8;
-    overflow-x: hidden; /* Запрещаем горизонтальный скролл */
+    align-items: flex-start; /* Изменено с center, чтобы контент не улетал */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
 .ticket {
-    margin-top: 20px; 
     width: 90vw;
-    max-width: 400px;
+    max-width: 350px;
     background-color: #f5f1e8;
     border-radius: 10px;
     text-align: center;
-    padding-bottom: 20px; /* Чтобы кнопка не прилипала к краю */
+    margin-top: 20px; /* Отступ сверху */
 }
 
 .header {
@@ -44,20 +43,22 @@ html, body {
     font-size: 20px;
     font-weight: bold;
     min-height: 60px;
-    padding: 15px 0;
+    padding: 10px 0;
+    margin-bottom: 0;
     text-align: center;
     box-sizing: border-box;
-    white-space: normal; /* Разрешаем перенос строк */
-    overflow: visible; /* Даем контенту нормально отображаться */
+    white-space: normal;
+    overflow: visible;
 }
 
+
 .content {
-    padding: 80px 20px 20px; /* Отступ сверху, чтобы не перекрывало заголовок */
+    padding-top: 10px
 }
 
 .logo {
     width: 80px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .success {
