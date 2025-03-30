@@ -22,16 +22,16 @@ html, body {
     justify-content: center;
     align-items: flex-start;
     overflow-x: hidden;
+    font-size: calc(1vw + 1vh + 0.5vmin); /* Автоматическая подгонка шрифта */
 }
 
 .ticket {
-    width: 49vw;
-    max-width: 350px;
+    width: 90vw;
+    max-width: 400px;
     background-color: #f5f1e8;
     border-radius: 10px;
     text-align: center;
     margin-top: 20px;
-    padding: 15px;
 }
 
 .header {
@@ -41,100 +41,92 @@ html, body {
     align-items: center;
     color: white;
     background: rgb(19, 5, 56);
-    font-size: 22px;
+    font-size: 1.2em;
     font-weight: bold;
     min-height: 60px;
-    padding: 12px 0;
-    margin-bottom: 0;
+    padding: 10px 0;
     text-align: center;
-    white-space: normal;
-    overflow: visible;
-    border-radius: 10px 10px 0 0;
 }
 
 .content {
-    padding-top: 12px;
-    line-height: 1.6;
+    padding-top: 10px;
 }
 
 .logo {
-    width: 86px;
-    margin: 8px 0;
+    width: 20%;
+    max-width: 80px;
+    margin: 5px 0;
 }
 
 .success {
     color: #2e1f4c;
-    font-size: 20px;
-    
+    font-size: 1.1em;
 }
 
 .transport {
-    font-size: 22px;
-    font-weight: 600;
-    margin-top: 12px;
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 .vehicleNumber {
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.6);
-    margin-top: 6px;
-}
-
-.price {
-    font-size: 50px;
-    font-weight: bold;
-    color: #2e1f4c;
-    margin: 12px 0;
-}
-
-.date {
-    font-size: 20px;
-    color: #2e1f4c;
-    line-height: 1.6;
-    margin-bottom: 12px;
-}
-
-.time-passed {
-    font-size: 20px;
-    color: #2e1f4c;
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.timer {
-    font-size: 34px;
-    color: #2e1f4c;
-    font-weight: bold;
-    text-align: center;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.5);
     margin-top: 5px;
 }
 
+.price {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2e1f4c;
+    margin: 10px 0;
+}
+
+.date {
+    font-size: 1.1em;
+    color: #2e1f4c;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.time-passed {
+    font-size: 1.1em;
+    color: #2e1f4c;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.timer {
+    font-size: 2em;
+    color: #2e1f4c;
+    font-weight: bold;
+    text-align: center;
+}
+
 .qr {
-    width: 85%;
-    max-width: 320px;
-    margin-top: 12px;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 10px;
 }
 
 .ticket-details {
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
     color: #333;
-    margin-top: 12px;
-    padding-top: 12px;
+    margin-top: 10px;
+    padding-top: 10px;
     border-top: 1px solid #ddd;
-    line-height: 1.5;
 }
 
 .download-btn {
-    margin-top: 30px;
-    margin-bottom: 18px;
+    margin-top: 27px;
+    margin-bottom: 15px;
     cursor: pointer;
-    width: 98%;
-    height: 52px;
+    width: 96%;
+    height: 50px;
     background: rgb(59, 158, 39);
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-radius: 8px;
     color: aliceblue;
     border: none;
     display: flex;
@@ -149,16 +141,16 @@ html, body {
 @media (max-width: 768px) {
     .ticket {
         width: 95vw;
-        max-width: 92%;
+        max-width: 95%;
     }
     .header {
-        font-size: 20px;
-        padding: 12px 0;
+        font-size: 1.1em;
+        padding: 10px 0;
     }
     .price {
-        font-size: 44px;
+        font-size: 2.2em;
     }
     .timer {
-        font-size: 30px;
+        font-size: 1.8em;
     }
 }
